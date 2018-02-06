@@ -59,4 +59,21 @@ export class HomePage {
   }
 
 
+  borrar_anima(id: number){
+      console.log(id);
+      this.animales.splice(id, 1);
+  }
+
+  recargar_animales( refresher:any){
+     console.log('inicia refresh')
+
+    setTimeout( () => {
+       console.log('time put refresh');
+       this.animales = ANIMALES.slice(0);
+       refresher.complete();
+    },2000);
+
+  }
+
+
 }
